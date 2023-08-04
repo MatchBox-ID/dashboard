@@ -1,112 +1,72 @@
-<!
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-<title>Matchbox</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v19/images/icons/favicon.ico" />
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/vendor/bootstrap/css/bootstrap.min.css">
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/vendor/animate/animate.css">
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/vendor/css-hamburgers/hamburgers.min.css">
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/vendor/animsition/css/animsition.min.css">
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/vendor/select2/select2.min.css">
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/vendor/daterangepicker/daterangepicker.css">
-
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/css/util.css">
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v19/css/main.css">
-
-<meta name="robots" content="noindex, follow">
-<script nonce="8f167e67-8121-4d6b-a881-b2098567c54e">(function(w,d){!function(dK,dL,dM,dN){dK[dM]=dK[dM]||{};dK[dM].executed=[];dK.zaraz={deferred:[],listeners:[]};dK.zaraz.q=[];dK.zaraz._f=function(dO){return function(){var dP=Array.prototype.slice.call(arguments);dK.zaraz.q.push({m:dO,a:dP})}};for(const dQ of["track","set","debug"])dK.zaraz[dQ]=dK.zaraz._f(dQ);dK.zaraz.init=()=>{var dR=dL.getElementsByTagName(dN)[0],dS=dL.createElement(dN),dT=dL.getElementsByTagName("title")[0];dT&&(dK[dM].t=dL.getElementsByTagName("title")[0].text);dK[dM].x=Math.random();dK[dM].w=dK.screen.width;dK[dM].h=dK.screen.height;dK[dM].j=dK.innerHeight;dK[dM].e=dK.innerWidth;dK[dM].l=dK.location.href;dK[dM].r=dL.referrer;dK[dM].k=dK.screen.colorDepth;dK[dM].n=dL.characterSet;dK[dM].o=(new Date).getTimezoneOffset();if(dK.dataLayer)for(const dX of Object.entries(Object.entries(dataLayer).reduce(((dY,dZ)=>({...dY[1],...dZ[1]})),{})))zaraz.set(dX[0],dX[1],{scope:"page"});dK[dM].q=[];for(;dK.zaraz.q.length;){const d_=dK.zaraz.q.shift();dK[dM].q.push(d_)}dS.defer=!0;for(const ea of[localStorage,sessionStorage])Object.keys(ea||{}).filter((ec=>ec.startsWith("_zaraz_"))).forEach((eb=>{try{dK[dM]["z_"+eb.slice(7)]=JSON.parse(ea.getItem(eb))}catch{dK[dM]["z_"+eb.slice(7)]=ea.getItem(eb)}}));dS.referrerPolicy="origin";dS.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dK[dM])));dR.parentNode.insertBefore(dS,dR)};["complete","interactive"].includes(dL.readyState)?zaraz.init():dK.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<title>Login 09</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/login-form-19/css/style.css">
+<script nonce="b029e9e7-4745-4583-83ec-d6e45e1f5efa">(function(w,d){!function(bt,bu,bv,bw){bt[bv]=bt[bv]||{};bt[bv].executed=[];bt.zaraz={deferred:[],listeners:[]};bt.zaraz.q=[];bt.zaraz._f=function(bx){return function(){var by=Array.prototype.slice.call(arguments);bt.zaraz.q.push({m:bx,a:by})}};for(const bz of["track","set","debug"])bt.zaraz[bz]=bt.zaraz._f(bz);bt.zaraz.init=()=>{var bA=bu.getElementsByTagName(bw)[0],bB=bu.createElement(bw),bC=bu.getElementsByTagName("title")[0];bC&&(bt[bv].t=bu.getElementsByTagName("title")[0].text);bt[bv].x=Math.random();bt[bv].w=bt.screen.width;bt[bv].h=bt.screen.height;bt[bv].j=bt.innerHeight;bt[bv].e=bt.innerWidth;bt[bv].l=bt.location.href;bt[bv].r=bu.referrer;bt[bv].k=bt.screen.colorDepth;bt[bv].n=bu.characterSet;bt[bv].o=(new Date).getTimezoneOffset();if(bt.dataLayer)for(const bG of Object.entries(Object.entries(dataLayer).reduce(((bH,bI)=>({...bH[1],...bI[1]})),{})))zaraz.set(bG[0],bG[1],{scope:"page"});bt[bv].q=[];for(;bt.zaraz.q.length;){const bJ=bt.zaraz.q.shift();bt[bv].q.push(bJ)}bB.defer=!0;for(const bK of[localStorage,sessionStorage])Object.keys(bK||{}).filter((bM=>bM.startsWith("_zaraz_"))).forEach((bL=>{try{bt[bv]["z_"+bL.slice(7)]=JSON.parse(bK.getItem(bL))}catch{bt[bv]["z_"+bL.slice(7)]=bK.getItem(bL)}}));bB.referrerPolicy="origin";bB.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bt[bv])));bA.parentNode.insertBefore(bB,bA)};["complete","interactive"].includes(bu.readyState)?zaraz.init():bt.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
 <body>
-<div class="limiter">
-<div class="container-login100">
-<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-<form class="login100-form validate-form" action="./user" method="GET">
-<span class="login100-form-title p-b-33">
-Account Login
-</span>
-<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-<input class="input100" type="text" name="email" placeholder="Email">
-<span class="focus-input100-1"></span>
-<span class="focus-input100-2"></span>
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
 </div>
-<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-<input class="input100" type="password" name="pass" placeholder="Password">
-<span class="focus-input100-1"></span>
-<span class="focus-input100-2"></span>
 </div>
-<div class="container-login100-form-btn m-t-20">
-<button class="login100-form-btn">
-Sign in
-</button>
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4">
+<div class="login-wrap py-5">
+<div class="img d-flex align-items-center justify-content-center" style="background-image: url(https://matchboxid.my.id/logo.png);"></div>
+<h3 class="text-center mb-0">WELCOME</h3>
+<p class="text-center">Login menggunakan akun anda</p>
+<center><a href="https://github.com/login/oauth/authorize?client_id=Iv1.c32418a432c74d3e"><button type="submit" class="btn form-control btn-primary rounded submit px-3"><i class="fa fa-github" style="font-size:25px"></i> LOGIN WITH GITHUB</button></a></center><br>
+<center><a href="https://wa.me/6285941896616?text=login+with+my+whatsapp"><button type="submit" class="btn form-control btn-primary rounded submit px-3"><i class="fa fa-whatsapp" style="font-size:25px"></i> LOGIN WITH WHATSAPP</button></a></center><br>
+<form action="./user" class="login-form">
+<div class="form-group">
+<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+<input type="text" class="form-control" placeholder="Username" required>
 </div>
-<div class="container-login100-form-btn m-t-20">
-<a href="https://github.com/login/oauth/authorize?client_id=Iv1.c32418a432c74d3e"<button class="login100-form-btn">
-Login Github
-</button></a>
+<div class="form-group">
+<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+<input type="password" class="form-control" placeholder="Password" required>
 </div>
-<div class="container-login100-form-btn m-t-20">
-<a href="https://wa.me/+6285936528795?text=LOGYTR6"<button class="login100-form-btn">
-Login WhatsApp
-</button></a>
+<div class="form-group d-md-flex">
+<div class="w-100 text-md-right">
+<a href="./auth/forgot-page">Forgot Password</a>
 </div>
-<div class="text-center p-t-45 p-b-4">
-<span class="txt1">
-Forgot
-</span>
-<a href="./auth/forgot-page" class="txt2 hov1">
-Username / Password?
-</a>
 </div>
-<div class="text-center">
-<span class="txt1">
-Create an account?
-</span>
-<a href="./register" class="txt2 hov1">
-Sign up
-</a>
-</div>
-</form>
+<div class="form-group">
+<button type="submit" class="btn form-control btn-primary rounded submit px-3" required>LOGIN</button>
+<br><br>
+<div class="w-100 text-center mt-4 text">
+<p class="mb-0">Don't have an account?</p>
+<a href="./register">Register</a>
 </div>
 </div>
 </div>
-
-<script src="https://colorlib.com/etc/lf/Login_v19/vendor/jquery/jquery-3.2.1.min.js"></script>
-
-<script src="https://colorlib.com/etc/lf/Login_v19/vendor/animsition/js/animsition.min.js"></script>
-
-<script src="https://colorlib.com/etc/lf/Login_v19/vendor/bootstrap/js/popper.js"></script>
-<script src="https://colorlib.com/etc/lf/Login_v19/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<script src="https://colorlib.com/etc/lf/Login_v19/vendor/select2/select2.min.js"></script>
-
-<script src="https://colorlib.com/etc/lf/Login_v19/vendor/daterangepicker/moment.min.js"></script>
-<script src="https://colorlib.com/etc/lf/Login_v19/vendor/daterangepicker/daterangepicker.js"></script>
-
-<script src="https://colorlib.com/etc/lf/Login_v19/vendor/countdowntime/countdowntime.js"></script>
-
-<script src="https://colorlib.com/etc/lf/Login_v19/js/main.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+</div>
+</div>
+</section>
+<script src="https://preview.colorib.com/theme/bootstrap/login-form-19/js/jquery.min.js"></script>
+<script src="https://preview.colorli.com/theme/bootstrap/login-form-19/js/popper.js"></script>
+<script src="https://preview.colrlib.com/theme/bootstrap/login-form-19/js/bootstrap.min.js"></script>
+<script src="https://preview.colorib.com/theme/bootstrap/login-form-19/js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7edb277bffd54ac5","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.7.0","si":100}' crossorigin="anonymous"></script>
 <script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-23581568-13');
-	</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7d4f2374781ba07d","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.4.0","si":100}' crossorigin="anonymous"></script>
+      $('#insert').click(function(){
+        Swal.fire({
+          icon: 'warning',
+          title: 'PERINGATAN',
+          html:
+           ('SAAT INI SERVER SEDANG MENGALAMI MASALAH TEKNIS')
+        })
+      })
+    </script>
 </body>
 </html>
