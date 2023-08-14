@@ -1,6 +1,5 @@
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="in">
 <head>
 <title>Login</title>
 <meta charset="utf-8">
@@ -26,6 +25,7 @@
 <h3 class="text-center mb-0">WELCOME</h3>
 <p class="text-center">Login menggunakan akun anda</p>
 <center><a href="https://github.com/login/oauth/authorize?client_id=Iv1.c32418a432c74d3e"><button type="submit" class="btn form-control btn-primary rounded submit px-3"><i class="fa fa-github" style="font-size:25px"></i> LOGIN WITH GITHUB</button></a></center><br>
+<center><button type="submit" onclick="trySampleRequest();" class="btn form-control btn-primary rounded submit px-3"><i class="fa fa-google" style="font-size:25px"></i> LOGIN WITH GOOGLE</button></center><br>
 <center><a href="https://wa.me/6285941896616?text=login+with+my+whatsapp"><button type="submit" class="btn form-control btn-primary rounded submit px-3"><i class="fa fa-whatsapp" style="font-size:25px"></i> LOGIN WITH WHATSAPP</button></a></center><br>
 <form action="./user" class="login-form">
 <div class="form-group">
@@ -53,6 +53,81 @@
 </div>
 </div>
 </section>
+<script>
+  var YOUR_CLIENT_ID = '1072008631107-kcev7n8le3mu8iv28bi2d8r433r6udti.apps.googleusercontent.com';
+  var YOUR_REDIRECT_URI = 'https://app.matchboxid.my.id/user';
+  var fragmentString = location.hash.substring(1);
+
+  // Parse query string to see if page request is coming from OAuth 2.0 server.
+  var params = {};
+  var regex = /([^&=]+)=([^&]*)/g, m;
+  while (m = regex.exec(fragmentString)) {
+    params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+  }
+  if (Object.keys(params).length > 0) {
+    localStorage.setItem('oauth2-test-params', JSON.stringify(params) );
+    if (params['state'] && params['state'] == 'try_sample_request') {
+      trySampleRequest();
+    }
+  }
+
+  // If there's an access token, try an API request.
+  // Otherwise, start OAuth 2.0 flow.
+  function trySampleRequest() {
+    var params = JSON.parse(localStorage.getItem('oauth2-test-params'));
+    if (params && params['access_token']) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET',
+          'https://www.googleapis.com/drive/v3/about?fields=user&' +
+          'access_token=' + params['access_token']);
+      xhr.onreadystatechange = function (e) {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(xhr.response);
+        } else if (xhr.readyState === 4 && xhr.status === 401) {
+          // Token invalid, so prompt for user permission.
+          oauth2SignIn();
+        }
+      };
+      xhr.send(null);
+    } else {
+      oauth2SignIn();
+    }
+  }
+
+  /*
+   * Create form to request access token from Google's OAuth 2.0 server.
+   */
+  function oauth2SignIn() {
+    // Google's OAuth 2.0 endpoint for requesting an access token
+    var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+
+    // Create element to open OAuth 2.0 endpoint in new window.
+    var form = document.createElement('form');
+    form.setAttribute('method', 'GET'); // Send as a GET request.
+    form.setAttribute('action', oauth2Endpoint);
+
+    // Parameters to pass to OAuth 2.0 endpoint.
+    var params = {'client_id': YOUR_CLIENT_ID,
+                  'redirect_uri': YOUR_REDIRECT_URI,
+                  'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
+                  'state': 'try_sample_request',
+                  'include_granted_scopes': 'true',
+                  'response_type': 'token'};
+
+    // Add form parameters as hidden input values.
+    for (var p in params) {
+      var input = document.createElement('input');
+      input.setAttribute('type', 'hidden');
+      input.setAttribute('name', p);
+      input.setAttribute('value', params[p]);
+      form.appendChild(input);
+    }
+
+    // Add form to page and submit it to open the OAuth 2.0 endpoint.
+    document.body.appendChild(form);
+    form.submit();
+  }
+  </script>
 <script src="https://preview.colorib.com/theme/bootstrap/login-form-19/js/jquery.min.js"></script>
 <script src="https://preview.colorli.com/theme/bootstrap/login-form-19/js/popper.js"></script>
 <script src="https://preview.colrlib.com/theme/bootstrap/login-form-19/js/bootstrap.min.js"></script>
@@ -68,5 +143,8 @@
         })
       })
     </script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'7f371d6aa9323e19',t:'MTY5MTQ5MDk1MS4wNzYwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
+
 </body>
 </html>
